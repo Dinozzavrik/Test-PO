@@ -7,31 +7,31 @@ class TestWordCounter(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(WordCounter.count_words(""), 0)
 
-    def test_single_word(self):
+    def test_one_word(self):
         self.assertEqual(WordCounter.count_words("word"), 1)
 
-    def test_multiple_words(self):
+    def test_more_words(self):
         self.assertEqual(WordCounter.count_words("Это строка с пятью словами"), 5)
 
-    def test_leading_trailing_spaces(self):
+    def test_more_spaces(self):
         self.assertEqual(WordCounter.count_words("   много пробелов  "), 2)
 
-    def test_multiple_spaces_between_words(self):
+    def test_more_spaces_between_words(self):
         self.assertEqual(WordCounter.count_words("много   пробелов между   словами"), 4)
 
-    def test_newline_characters(self):
+    def test_newline(self):
         self.assertEqual(WordCounter.count_words("строка\nс\nновыми\nстроками"), 4)
 
-    def test_tabs_between_words(self):
+    def test_tabs(self):
         self.assertEqual(WordCounter.count_words("слово\tслово\tслово"), 3)
 
     def test_only_spaces(self):
         self.assertEqual(WordCounter.count_words("     "), 0)
 
-    def test_special_characters(self):
+    def test_special_char(self):
         self.assertEqual(WordCounter.count_words("!@#$%^&*()"), 1)
 
-    def test_numeric_string(self):
+    def test_num_string(self):
         self.assertEqual(WordCounter.count_words("123 456 789"), 3)
 
 if __name__ == "__main__":
